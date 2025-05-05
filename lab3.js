@@ -29,11 +29,11 @@ console.log("The students that dont have O ", students.filter((currentValue) => 
 let studentGrade = [["Ali", [85, 90, 90]], ["Sara", [85, 29, 78]], ["ahmed", [85, 90, 78]], ["Lana", [85, 90, 78]], ["Omar", [85, 81, 78]], ["Noor", [85, 77, 78]]]
 
 let studentsAve = studentGrade.map(([name, grade]) => {
-    let ave = grade.reduce((sum, currentValue) => (sum + currentValue) / currentValue.length, 0)
+    let ave = grade.reduce((sum, currentValue) => sum + currentValue, 0) / grade.length
     return [name, ave.toFixed(2)]
 })
 
 console.log(studentsAve);
 
 
-console.log("The students that dont have O ", studentsAve.filter((currentValue) => currentValue[1] >= 80));
+console.log("The students above 80 ", studentsAve.filter((currentValue) => currentValue[1] >= 80));
